@@ -19,7 +19,7 @@ while capture.isOpened():
 
     frame.flags.writeable = True
     
-    if results.multi_face_landmakrs:
+    if results.multi_face_landmarks:
         for face_landmarks in results.multi_face_landmarks:
             mp_drawing.draw_landmarks(
                 image = frame,
@@ -30,9 +30,8 @@ while capture.isOpened():
             )
 
     cv2.imshow("Face Mesh", frame)
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
 
-    if cv2.waitkey(5) & 0xFF == 27:
-        break 
-    
-    capture.release()
-    cv2.destroyAllWindows()
+capture.release()
+cv2.destroyAllWindows()
