@@ -6,3 +6,10 @@ mp_face_wash = mp.solutions.face_mesh
 
 face_mesh = mp_face_wash.FaceWash(static_image_mode=False, max_num_faces=1, refine_landmarks=True)
 
+capture = cv2.VideoCapture(0)
+
+while capture.isOpened():
+    success, frame = capture.read()
+    if not success:
+        break
+    
