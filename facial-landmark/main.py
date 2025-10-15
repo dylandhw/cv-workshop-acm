@@ -12,4 +12,11 @@ while capture.isOpened():
     success, frame = capture.read()
     if not success:
         break
+
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    results = face_mesh.process(rgb_frame)
+
+    frame.flags.writeable = True
+    
     
