@@ -51,7 +51,20 @@ def live_webcam():
     cv2.destroyAllWindows()
 
 def main():
-    static_edge_detection("examples/city.jpg")
-    live_webcam()   
+    user_input = int(input( 
+        "==================================" \
+        "\n--- Static Detection: Press 1" \
+        "\n--- Live Webcam Detection: Press 2\n" \
+        ">>> "
+    ))
+
+    match user_input:
+        case 1:
+            static_edge_detection("examples/city.jpg")
+        case 2:
+            live_webcam()
+        case _:
+            print("Invalid input")
+
 if __name__ == "__main__":
     main()
