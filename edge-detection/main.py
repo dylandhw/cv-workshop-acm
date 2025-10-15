@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def static_edge_detection(file_name):
     # load our image
-    image = cv2.imread("examples/city.jpg")
+    image = cv2.imread(file_name)
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
     plt.imshow(image_rgb)
@@ -61,7 +61,7 @@ def main():
 
     match user_input:
         case 1:
-            static_edge_detection("examples/city.jpg")
+            static_edge_detection("examples/shape.jpg")
         case 2:
             live_webcam()
         case _:
