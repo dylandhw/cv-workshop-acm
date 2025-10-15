@@ -18,4 +18,18 @@ plt.title("Grayscale")
 plt.axis("off")
 plt.show()
 
+# apply a filter 
+blur = cv2.GaussianBlur(gray, (5,5), 0)
 
+plt.imshow(blur, cmap="gray")
+plt.title("Blurred - Reduced Noise")
+plt.axis("off")
+plt.show()
+
+
+# edge detection
+edges = cv2.Canny(blur, 100, 200)
+plt.imshow(edges, cmap="gray")
+plt.title("Canny Edge Detection")
+plt.axis("off")
+plt.show()
