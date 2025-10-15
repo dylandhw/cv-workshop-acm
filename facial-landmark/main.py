@@ -28,3 +28,11 @@ while capture.isOpened():
                 landmark_drawing_spec=None, 
                 connection_drawing_spec=mp_drawing.DrawingSpec(color=(0,255,0), thickness=1, circle_radius=1)
             )
+
+    cv2.imshow("Face Mesh", frame)
+
+    if cv2.waitkey(5) & 0xFF == 27:
+        break 
+    
+    capture.release()
+    cv2.destroyAllWindows()
