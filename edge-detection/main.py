@@ -1,6 +1,7 @@
 import cv2 
 import matplotlib.pyplot as plt 
 
+# REMINDER: Rewrite to just the boiler plate code, so attendees can write the important parts themselves
 
 def static_edge_detection(file_name):
     # load our image
